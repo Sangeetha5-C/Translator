@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/trans.css">
+    <title>Translator</title>
+</head>
+<body>
+    <div id="main">
+        <div class="submain">
+            <h1>TRANSLATOR</h1>
+            <br>
+            <!-- Buttons to select translation mode -->
+            <button class="Tbtn" onclick="setMode('tamil_to_english',this)">Tamil To English</button>
+            <button class="Tbtn" onclick="setMode('english_to_tamil',this)">English to Tamil</button>
+            <!-- Form to enter the text to translate -->
+            <form method="POST" action="/">
+                <input class="input" type="text" name="tamil_text" placeholder="Enter your text" required
+                    aria-label="Enter the text to translate"> <br>
+                <input type="hidden" name="translation_mode" id="translation_mode" value="tamil_to_english">
+                <button class="btn2" type="submit">Convert</button>
+            </form>
+            <!-- Display translation -->
+            <div class="result">
+                <h3>
+                    {% if tamil_sentence %}
+                    {% if translation_mode == 'tamil_to_english' %}
+                    Input Sentence (Tamil): <span>{{ tamil_sentence }}</span>
+                    {% elif translation_mode == 'english_to_tamil' %}
+                    Input Sentence (English): <span>{{ tamil_sentence }}</span>
+                    {% endif %}
+                    {% else %}
+                    <span>No input provided.</span>
+                    {% endif %}
+                </h3>
+                <h3>
+                    {% if translation %}
+                    {% if translation_mode == 'tamil_to_english' %}
+                    Translated Sentence (English): <span>{{ translation }}</span>
+                    {% elif translation_mode == 'english_to_tamil' %}
+                    Translated Sentence (Tamil): <span>{{ translation }}</span>
+                    {% endif %}
+                    {% else %}
+                    <span>No translation available.</span>
+                    {% endif %}
+                </h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        function setMode(mode, button) {
+            // Set the translation mode
+            document.getElementById('translation_mode').value = mode;
+            // Remove 'clicked' class from all buttons
+            const buttons = document.querySelectorAll('.Tbtn');
+            buttons.forEach(btn => btn.classList.remove('clicked'));
+            // Add 'clicked' class to the clicked button
+            button.classList.add('clicked');
+            // Debugging: Log the button's class list
+            console.log(button.classList);
+        }
+    </script>
+</body>
+</html>
+

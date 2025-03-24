@@ -1,0 +1,82 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    height: 100vh;
+    background-color: #ecd085;
+    background-image: url(https://www.shutterstock.com/image-illustration/languages-world-word-cloud-on-260nw-1714717147.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.submain {
+    background-image: url(https://img.freepik.com/premium-photo/black-background-with-numbers-numbers-that-say-us_787500-3754.jpg);
+    margin: auto;
+    height: 70vh;
+    width: 60vh;
+    padding: 50px;
+    margin-top: 60px;
+    border-radius: 10px;
+}
+
+.submain h1 {
+    color: rgb(255, 255, 255);
+    margin-left: 30px;
+    font-weight: 90px;
+    font-size: 50px;
+}
+
+.input {
+    margin-top: 30px;
+    margin-left: 40px;
+    height: 30px;
+    width: 290px;
+}
+
+.btn2 {
+    margin-top: 50px;
+    margin-left: 130px;
+    height: 30px;
+    width: 90px;
+    border-radius: 15px;
+}
+
+button:hover {
+    color: #2b0408;
+    background-color: #ecd085;
+}
+
+.highlight {
+    box-shadow: 0 0 10px 3px rgba(300, 300, 0, 0.8);
+    transition: box-shadow 0.3s ease;
+}
+
+.result {
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: #022d54;
+    margin-right: 40px;
+}
+
+.result, p {
+    color: white;
+    padding: 20px;
+    margin-left: 40px;
+}
+
+.Tbtn {
+    padding: 8px;
+    margin: 5px;
+    margin-left: 35px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+.Tbtn.clicked {
+    background-color: #1361aa;
+    color: white;
+}
